@@ -1,0 +1,225 @@
+\documentclass{article}
+\input{pakages}
+
+
+\usepackage{natbib}
+
+
+
+\title{Standard Template}
+\author[1,2]{Yihan Wang \footnote{Contributed equally.}}
+\author[3]{Co-Author \protect\CoAuthorMark \thanks{12}}
+\author[4]{Advisor \thanks{12} \footnote{asdf}}
+
+\affil[1]{Academy of Mathematics and Systems Science, Chinese Academy of Sciences}
+\affil[2]{University of Chinese Academy of Sciences}
+\affil[3]{Some University}
+\affil[4]{Some Institute}
+
+
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+$\mathrm{123asdfsa}$
+
+
+\cref{sec:intro}, \Cref{sec:intro} 
+
+\hyperref[sec:intro]{123}
+\href{mailto:someone@example.com}{someone@example.com}
+\href{https://www.example.com}{Example}
+
+
+
+\iffalse
+abc
+\fi
+
+\begin{comment}
+    aaaaa
+\end{comment}
+
+\textcolor{red}{123}
+\textdagger
+
+\begin{align}
+    \frac{123}{222}\label{equ:1}\\
+    \nicefrac{123}{222}\nonumber\\
+    \mathscr{A}, \mathds{N}  \\
+    \pdv[order={3, 4}]{x}{y,z}, \odv[order=1]{x}{z}, \odif[order=2]{x,y}, \pdif{x}{f} \\
+    \dagger 
+\end{align}
+
+\Cref{equ:1}
+
+\teal{aaa}
+
+\begin{empheq}[box=\fbox]{equation}
+  E = mc^2
+\end{empheq}
+\begin{empheq}[box=\colorbox{yellow}]{equation}
+  F = ma
+\end{empheq}
+
+
+\cite{Knuth97}, \citep{Lamport86}, \cite{Smith20}
+
+\lipsum[1-2]
+\begin{wrapfigure}[14]{R}{0.4\textwidth}
+    \vspace{-10pt}
+    \centering
+    \includegraphics[width=\linewidth]{example-image}
+    \vspace{-15pt}
+    \caption{Wrap figure.}
+    \label{fig:wrap-figure}
+\end{wrapfigure}
+\lipsum[4-5]
+\begin{wraptable}[10]{L}{0.4\textwidth}
+    \vspace{-12pt}
+    \centering
+    \caption{Wrap table.}
+    \label{tab:warp-table}
+    \vspace{-8pt}
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l|cc}
+    \toprule
+    \multirow{2}{*}{\textbf{Columns}} & \multicolumn{2}{c}{Type 1} \\
+    & \texttt{Attr. 1}  & \textbf{Attr. 2}    \\
+    \midrule
+    Method 1    & 20.00  & - \\
+    Method 2    & 12.34  & 0.1234 \\
+    Method 3    & 12.34  & 0.1234 \\
+    Method 4    & 12.34  & 0.1234 \\
+    \bottomrule
+    \end{tabular}%
+    }
+\end{wraptable}
+\lipsum[6-8]
+
+
+\begin{lstlisting}
+def hello_world():
+    print("Hello, world!")
+\end{lstlisting}
+\begin{python}
+    def hello_world():
+    print("Hello, world!")
+\end{python}
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{example-image}
+    \caption{Single image.}
+    \label{fig:single}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-3}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-4}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-5}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\linewidth]{example-image}
+        \caption{One of multiple images.}
+        \label{fig:multiple-images-6}
+    \end{subfigure}
+    \caption{Multiple images as sub-figures for reference.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.32\linewidth]{example-image}
+    \hfill
+    \includegraphics[width=0.32\linewidth]{example-image}
+    \hfill
+    \includegraphics[width=0.32\linewidth]{example-image}
+    \caption{Multiple images in a figure.}
+    \label{fig:multiple-images}
+\end{figure}
+
+
+
+\Cref{fig:side-by-side}, \Cref{tab:side-by-side}, \Cref{fig:wrap-figure}, \Cref{tab:warp-table}
+
+\begin{figure}[ht]
+\begin{minipage}{0.47\textwidth}
+\caption{Image side-by-side.}
+\label{fig:side-by-side}
+\includegraphics[width=\linewidth]{example-image}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\captionof{table}{Table side-by-side.}
+\label{tab:side-by-side}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l|cc|cc}
+\toprule
+\multirow{2}{*}{\textbf{Columns}} & \multicolumn{2}{c|}{Type 1} & \multicolumn{2}{c}{Type 2} \\
+& \texttt{Attr. 1}  & \textbf{Attr. 2}   & \texttt{Attr. 1}  & \textbf{Attr. 2}  \\
+\midrule
+Method 1    & 20.00  & - & 60.00 & -     \\
+Method 2    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 3    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 4    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 5    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 6    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 7    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 8    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 9    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 10   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 11   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 12   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+Method 13   & \textbf{10.00}  & \textbf{0.1000} & \textbf{50.00} & \textbf{0.5000}      \\
+\bottomrule
+\end{tabular}%
+}
+\end{minipage}
+\hfill
+% \vspace{5pt}
+
+\end{figure}
+
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{reference.bib}
+
+
+\end{document}
