@@ -49,13 +49,15 @@
 \usepackage{pythonhighlight}
 \usepackage{listings}
 
-% author affiliation
-\usepackage{authblk}
 
 % hyperlink reference and clever reference
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \usepackage{cleveref}
 % \usepackage[capitalize,noabbrev]{cleveref}
+
+% quote
+\usepackage[english]{babel}
+\usepackage{csquotes}
 
 % enumerate and itermize
 \usepackage{enumitem}
@@ -71,19 +73,13 @@
 \usepackage{algorithmicx}
 \usepackage[noend]{algpseudocode}
 \makeatletter
-\renewcommand{\ALG@beginalgorithmic}{\footnotesize} % foot size in algorithm
+\renewcommand{\ALG@beginalgorithmic}{\normalsize} % \footsize \large ....
 \makeatother
 
-
-% use biblatex
-% \usepackage[backend=biber,style=authoryear,sorting=nyt,giveninits=true,uniquename=false,uniquelist=false,maxcitenames=2,maxbibnames=9,defernumbers=true,url=false,doi=false,isbn=false]{biblatex}
-% \usepackage[utf8]{inputenc}
-% \usepackage{csquotes}
-% \usepackage[style=authoryear,backend=biber]{biblatex}
-% \addbibresource{reference.bib}
-% \printbibliography
-
-
+% biblatex
+\usepackage[style=authoryear,backend=biber,natbib=true,url=false, isbn=false,doi=false,sorting=nyt,giveninits=true,uniquename=false,uniquelist=false,maxcitenames=2,maxbibnames=9,defernumbers=true]{biblatex}
+% \usepackage[style=ieee,backend=biber,natbib=true, url=false,doi=false,isbn=false]{biblatex}
+\addbibresource{reference.bib}
 
 % import commands
 \input{commands}
