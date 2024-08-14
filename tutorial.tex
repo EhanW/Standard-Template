@@ -16,90 +16,6 @@
 
 
 
-\begin{table}[htb]
-\centering
-\caption{123}
-\label{tab:cifar10-10}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{c|cccccc|c}
-\toprule
-\shortstack{\textbf{Unlearning}\\\textbf{Methods}}
-% \textbf{Methods}      
-& 
-% \textbf{Encoder  MIA}  123
-\shortstack{\textbf{Encoder}\\\textbf{MIA}}
-& \shortstack{\textbf{Retain}\\\textbf{Accuracy}}% \textbf{Retain Acc.} 
-& \shortstack{\textbf{Test}\\\textbf{Accuracy}}
-%\textbf{Test Acc.}           
-& \shortstack{\textbf{Unlearn}\\\textbf{Accuracy}}%\textbf{Unlearn Acc.}           
-& \shortstack{\textbf{Classifier}\\\textbf{MIA}}%\textbf{Classifier MIA}         
-& \shortstack{\textbf{Average}\\\textbf{Gap}(\%)}
-%\textbf{Avg. Gap}
-$\downarrow$  
-& \shortstack{\textbf{Running}\\\textbf{Time}(mins)}
-% \textbf{RTE} 
-$\downarrow$  \\
-\hline
-\multicolumn{8}{c}{ \cellcolor[HTML]{EFEFEF} \textsc{MoCo}}      \\
-\hline
-Retrain      & 49.72        & 89.54        & 87.76        & 88.42        & 34.38        &  -        &  109.47   \\
-Fine-Tune    & 50.15 (0.43) & 88.34 (1.20) & 86.46 (1.30) & 87.59 (0.83) & 29.42 (4.96) & 1.74     &  1.42   \\
-Grad. Ascent & 44.95 (4.77) & 89.92 (0.38) & 88.28 (0.52) & 89.76 (1.34) & 28.53 (5.85) & 2.57     &  0.17   \\
-NegGrad      & 48.43 (1.29) & 89.25 (0.29) & 87.35 (0.40) & 88.58 (0.16) & 28.89 (5.49) & 1.53     &  1.70   \\
-$l_1$-Sparsity  & 49.38 (0.34) & 88.56 (0.98) & 86.91 (0.84) & 88.12 (0.30) & 29.91 (4.47) & 1.39     &  1.43   \\
-AC (Ours)         & 50.28 (0.56) & 89.14 (0.40) & 87.24 (0.52) & 88.20 (0.22)  & 31.50 (2.88) & \textbf{0.92}     &1.87     \\
-\hline
-\multicolumn{8}{c}{\cellcolor[HTML]{EFEFEF}\textsc{SimCLR}}      \\
-\hline
-Retrain      & 48.11        & 90.87        & 88.94        & 89.68        & 38.87        & -         & 151.77    \\
-Fine-Tune    & 47.72 (0.39) & 89.38 (1.49) & 87.26 (1.68) & 88.93 (0.75) & 30.71 (8.16) & 2.49     &  1.93   \\
-Grad. Ascent & 41.48 (6.63) & 91.26 (0.40)  & 89.55 (0.61) & 91.11 (1.43) & 29.36 (9.50)  & 3.71     & 0.19    \\
-NegGrad      & 49.56 (1.46) & 89.10 (1.77)  & 87.23 (1.71) & 89.07 (0.61) & 29.97 (8.89) & 2.89     &  2.34   \\
-$l_1$-Sparsity  & 48.44 (0.33) & 90.59 (0.28) & 88.56 (0.38) & 90.44 (0.75) & 30.61 (8.26) & 2.00        &  1.96   \\
-AC (Ours)         & 48.64 (0.53) & 90.24 (0.63) & 88.06 (0.88) & 89.24 (0.44) & 33.12 (5.75) & \textbf{1.65}     &  3.00\\
-\bottomrule
-\end{tabular}%
-}
-\end{table}
-
-
-
-
-\begin{table}[ht]
-
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{c|cc|cc}
-\toprule
-\multirow{2}{*}{\textbf{Methods}} & \multicolumn{2}{c|}{10\%} & \multicolumn{2}{c}{50\%} \\
-& \texttt{FS}  & \textbf{Gap} $\downarrow$   & \texttt{FS}  & \textbf{Gap} $\downarrow$ \\
-\midrule
-Retrain     & 0.0266  & - & 0.0604 & -     \\
-Fine-Tune   & 0.0393  & 0.0127 & 0.0423 & 0.0180     \\
-Grad.Ascent & 0.0005  & 0.0262 & 0.0007 & 0.0596     \\
-NegGrad     & 0.0205  & 0.0061 & 0.1002 & 0.0398     \\
-$l_1$-Sparsity & 0.0216  & 0.0050 & 0.0408 & 0.0195     \\
-AC (Ours)        & 0.0259  & \textbf{0.0007} & 0.0672 & \textbf{0.0068}      \\
-\bottomrule
-\end{tabular}%
-}
-
-\end{table}
-
-\begin{table}[bth]
-\centering
-
-\resizebox{\textwidth}{!}{
-\begin{tabular}{c|c|cccccc}
-\toprule
-\textbf{Dataset} & \textbf{Pre-train} & \textbf{Retrain} & \textbf{Fine-Tune} & \textbf{Grad. Ascent} & \textbf{NegGrad} & $l_1$\textbf{-Sparsity} & \textbf{AC (Ours)} \\
-\midrule
-Retain               & 62.09    & 62.47 (0) & 58.67 (3.80)  & 61.96 (0.51)  & 58.57 (3.90)  & 57.70 (4.76)    &  60.75 (1.72)   \\
-Unlearn               & 62.08    & 49.84 (0) & 54.75 (4.91) & 62.03 (12.19) & 49.19 (0.65) & 53.54 (3.70)    &  51.23 (1.39)    \\
-Avg. Gap $\downarrow$             & -        & 0         & 4.35         & 6.35          & 2.28         & 4.23           &  \textbf{1.56}     \\
-\bottomrule
-\end{tabular}%
-}
-\end{table}
 
 
 $\mathrm{123asdfsa}$
@@ -362,14 +278,6 @@ Method 13   & \textbf{10.00}  & \textbf{0.1000} & \textbf{50.00} & \textbf{0.500
 \EndFor
 \end{algorithmic}
 \end{algorithm}
-
-
-
-\begin{lstlisting}[style=mypython,caption={Python code.}, label={code}]
-def hello_world():
-    print("Hello, world!")
-\end{lstlisting}
-
 
 
 
