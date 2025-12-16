@@ -2,7 +2,7 @@
 \input{files/packages}
 \addbibresource{reference.bib}
 
-\title{Standard Template}
+\title{Title}
 \input{sections/authors}
 \date{}
 \begin{document}
@@ -12,34 +12,23 @@
 
 \section{Symbols, Fonts and Maths}
 
+\begin{align*}
+    A, \Abb, \Abf, \Abs, \Acal, \Ads, \Afk, \Ascr, \Asf, \Att, \Abar, \Ahat, \Atil, \Atilde, \Abbar, \Abhat, \Abtil, \Abtilde, \Avec \\
+    a, \abf, \afk, \asf, \att, \abar, \ahat, \atil, \atilde, \abbar, \abhat, \abtil, \abtilde, \avec \\
+    \delta, \deltav, \Delta, \Deltav \\
+    \Alpha, \Mu
+\end{align*}
 
-
-
-
-
-
-$\mathrm{123asdfsa}$
-\iffalse
-abc
-\fi
-
-\begin{comment}
-    aaaaa
-\end{comment}
-
-\textcolor{red}{123}
 \textdagger
 
 \begin{align}
-    \frac{123}{222}\label{equ:1}\\
-    \nicefrac{123}{222}\nonumber\\
-    \mathscr{A}, \mathds{N}  \\
+    \frac{123}{222}\label{equ:1}, \nicefrac{123}{222}\nonumber,     \Vert \delta \Vert_\infty \leq \nicefrac{8}{255}\\
     \pdv[order={3, 4}]{x}{y,z}, \odv[order=1]{x}{z}, \odif[order=2]{x,y}, \pdif{x}{f} \\
-    \dagger 
+    \prob_{x\sim \Dcal}[|], \EE[|]\\
+    \ceil{x}, \floor{x}, \abs{x}, \norm{x}, \normzero{x}, \normone{x}, \normtwo{x}, \norminfty{x} \\
+    \KL(\mu\Vert \nu), \relu(1), \JS, \err,\logit, \softmax()
 \end{align}
 
-
-\teal{aaa}
 
 \begin{empheq}[box=\fbox]{equation}
   E = mc^2
@@ -52,13 +41,35 @@ abc
 
 
 
+\section{Theorems}
+
+\begin{theorem}[ABC] \label{thm:1}
+    \lipsum[4]
+\end{theorem}
+
+\begin{lemma}[ABC]
+    \lipsum[4]
+\end{lemma}
+
+\begin{definition}[ABC]
+    \lipsum[4]
+\end{definition}
+
+\begin{assumption}[ABC]
+    \lipsum[4]
+\end{assumption}
+
+
+\begin{remark}[ABC]
+    \lipsum[4]
+\end{remark}
 
 
 \section{Reference and Citation} \label{sec:refer-cite}
 
 \subsection{Reference}
 \paragraph{Inner reference.}
-\cref{sec:refer-cite}, \Cref{sec:refer-cite}, \Cref{equ:1}, \Cref{tab:single,tab:side-by-side,tab:warp-table}, \Cref{fig:single}, \Cref{fig:multiple-images}, \Cref{fig:multiple-images-1}, \Cref{fig:multiple-images-4}, \Cref{alg:algorithm}, \Cref{code}, Code \ref{code}
+\Cref{thm:1}, \cref{sec:refer-cite}, \Cref{sec:refer-cite}, \Cref{equ:1}, \Cref{tab:single,tab:side-by-side,tab:warp-table}, \Cref{fig:single}, \Cref{fig:multiple-images}, \Cref{fig:multiple-images-1}, \Cref{fig:multiple-images-4}, \Cref{alg:algorithm}
 
 \paragraph{Hyper reference.}
 \hyperref[sec:refer-cite]{Introduction},
@@ -66,12 +77,12 @@ abc
 \href{https://www.example.com}{Example email}
 
 \subsection{Citation}
-\cite{VaswaniSPUJGKP17},
-\citep{VaswaniSPUJGKP17},
-\citet{VaswaniSPUJGKP17},
-\citealt{VaswaniSPUJGKP17}, \citealp{VaswaniSPUJGKP17},
-\citealt*{VaswaniSPUJGKP17},
-\citeauthor{VaswaniSPUJGKP17}
+\cite{Knuth97},
+\citep{Knuth97},
+\citet{Knuth97},
+\citealt{Knuth97}, \citealp{Knuth97},
+\citealt*{Knuth97},
+\citeauthor{Knuth97}
 
 
 \subsection{Quote}
@@ -87,8 +98,14 @@ As someone said, \enquote{He replied, \enquote{This is an example of nested quot
 
 
 
+\section{Comments and Revision}
 
-
+\begin{comment}
+    This is a comment.
+\end{comment}
+\iffalse
+    Removed content
+\fi
 
 
 \clearpage
@@ -102,7 +119,7 @@ As someone said, \enquote{He replied, \enquote{This is an example of nested quot
     \caption{Wrap figure.}
     \label{fig:wrap-figure}
 \end{wrapfigure}
-\lipsum[1]
+\lipsum[4]
 \begin{wraptable}[10]{L}{0.4\textwidth}
     \vspace{-12pt}
     \centering
@@ -204,7 +221,7 @@ As someone said, \enquote{He replied, \enquote{This is an example of nested quot
     \includegraphics[width=0.32\linewidth]{example-image}
     \hfill
     \includegraphics[width=0.32\linewidth]{example-image}
-    \caption{Multiple images in a figure.}
+    \caption{Multiple images in a figure. \figleft, \figcenter, \figright}
     \label{fig:multiple-images}
 \end{figure}
 
@@ -213,38 +230,38 @@ As someone said, \enquote{He replied, \enquote{This is an example of nested quot
 \Cref{fig:side-by-side}, \Cref{tab:side-by-side}, \Cref{fig:wrap-figure}, \Cref{tab:warp-table}
 
 \begin{figure}[ht]
-\begin{minipage}{0.47\textwidth}
-\caption{Image side-by-side.}
-\label{fig:side-by-side}
-\includegraphics[width=\linewidth]{example-image}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\textwidth}
-\captionof{table}{Table side-by-side.}
-\label{tab:side-by-side}
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{l|cc|cc}
-\toprule
-\multirow{2}{*}{\textbf{Columns}} & \multicolumn{2}{c|}{Type 1} & \multicolumn{2}{c}{Type 2} \\
-& \texttt{Attr. 1}  & \textbf{Attr. 2}   & \texttt{Attr. 1}  & \textbf{Attr. 2}  \\
-\midrule
-Method 1    & 20.00  & - & 60.00 & -     \\
-Method 2    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 3    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 4    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 5    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 6    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 7    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 8    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 9    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 10   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 11   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 12   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
-Method 13   & \textbf{10.00}  & \textbf{0.1000} & \textbf{50.00} & \textbf{0.5000}      \\
-\bottomrule
-\end{tabular}%
-}
-\end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \caption{Image side-by-side.}
+        \label{fig:side-by-side}
+        \includegraphics[width=\linewidth]{example-image}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \captionof{table}{Table side-by-side.}
+        \label{tab:side-by-side}
+        \resizebox{\linewidth}{!}{%
+        \begin{tabular}{l|cc|cc}
+        \toprule
+        \multirow{2}{*}{\textbf{Columns}} & \multicolumn{2}{c|}{Type 1} & \multicolumn{2}{c}{Type 2} \\
+        & \texttt{Attr. 1}  & \textbf{Attr. 2}   & \texttt{Attr. 1}  & \textbf{Attr. 2}  \\
+        \midrule
+        Method 1    & 20.00  & - & 60.00 & -     \\
+        Method 2    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 3    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 4    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 5    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 6    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 7    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 8    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 9    & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 10   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 11   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 12   & 12.34  & 0.1234 & 56.78 & 0.5678     \\
+        Method 13   & \textbf{10.00}  & \textbf{0.1000} & \textbf{50.00} & \textbf{0.5000}      \\
+        \bottomrule
+        \end{tabular}%
+        }
+    \end{minipage}
 \hfill
 % \vspace{5pt}
 
@@ -278,6 +295,8 @@ Method 13   & \textbf{10.00}  & \textbf{0.1000} & \textbf{50.00} & \textbf{0.500
 \EndFor
 \end{algorithmic}
 \end{algorithm}
+
+
 
 
 
